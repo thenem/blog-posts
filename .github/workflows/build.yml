@@ -24,3 +24,4 @@ jobs:
 
       - name: Deploy to dev.to
         run: DEV_TO_GIT_TOKEN=${{ secrets.DEV_TO_GIT_TOKEN }} yarn run dev-to-git
+
