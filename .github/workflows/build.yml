@@ -25,7 +25,7 @@ jobs:
       - name: Publish to Dev.to
         uses: muncus/devto-publish-action@release/v1
         with:
-          directory: "$GITHUB_WORKSPACE/content/"
+          directory: "$GITHUB_WORKSPACE/posts/"
           api-key: "${{ secrets.DEVTO_TOKEN }}"
           state-file: "$GITHUB_WORKSPACE/ids.json"
           
