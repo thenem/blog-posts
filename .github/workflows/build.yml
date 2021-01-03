@@ -36,5 +36,5 @@ jobs:
           reviewers: ${{ github.actor }}
           token: "${{ secrets.GH_TOKEN }}"
           base: master
-          branch: "ci/state-file-update
+          branch: "ci/state-file-update"
 
