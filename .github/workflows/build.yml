@@ -22,6 +22,19 @@ jobs:
       - name: Run Embedme
         run: yarn run embedme:check
 
-      - name: Deploy to dev.to
-        run: DEV_TO_GIT_TOKEN=${{ secrets.DEV_TO_GIT_TOKEN }} yarn run dev-to-git
+      - name: Publish to Dev.to
+        uses: muncus/devto-publish-action@release/v1
+        with:
+          directory: "$GITHUB_WORKSPACE/content/"
+          api-key: "${{ secrets.DEVTO_TOKEN }}"
+          state-file: "$GITHUB_WORKSPACE/ids.json"
+          
+      - name: Create PR to update state file
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: "[CI] Update state file with published article ids"
+          reviewers: ${{ github.actor }}
+          token: "${{ secrets.GH_TOKEN }}"
+          base: master
+          branch: "ci/state-file-update"
 
