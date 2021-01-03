@@ -1,40 +1,32 @@
-name: Build
-
+name: Publish
+# Only trigger this workflow on master, and a feature branch specifically for testing the workflow.
 on:
   push:
-    branches:
-      - master
+    branches: master
 
 jobs:
   build:
-    name: Build
+    name: Publish
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@master
+    # First, check out the repo.
+    - name: Check out repo
+      uses: actions/checkout@v2
 
-      - name: Install Dependencies
-        uses: bahmutov/npm-install@v1
+    # Then publish articles.
+    - name: Publish to Dev.to
+      uses: muncus/devto-publish-action@release/v1
+      with:
+        directory: "$GITHUB_WORKSPACE/posts/"
+        api-key: "${{ secrets.DEVTO_TOKEN }}"
+        state-file: "$GITHUB_WORKSPACE/ids.json"
 
-      - name: Run Prettier
-        run: yarn run prettier:check
-
-      - name: Run Embedme
-        run: yarn run embedme:check
-
-      - name: Publish to Dev.to
-        uses: muncus/devto-publish-action@release/v1
-        with:
-          directory: "$GITHUB_WORKSPACE/posts/"
-          api-key: "${{ secrets.DEVTO_TOKEN }}"
-          state-file: "$GITHUB_WORKSPACE/ids.json"
-          
-      - name: Create PR to update state file
-        uses: peter-evans/create-pull-request@v3
-        with:
-          title: "[CI] Update state file with published article ids"
-          reviewers: ${{ github.actor }}
-          token: "${{ secrets.GH_TOKEN }}"
-          base: master
-          branch: "ci/state-file-update"
-
+    # Last, update the state file by making a PR.
+    - name: Create PR to update state file
+      uses: peter-evans/create-pull-request@v3
+      with:
+        title: "[CI] Update state file with published article ids"
+        reviewers: ${{ github.actor }}
+        token: "${{ secrets.GH_TOKEN }}"
+        base: master
+        branch: "ci/state-file-update"
