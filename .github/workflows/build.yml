@@ -34,7 +34,7 @@ jobs:
         with:
           title: "[CI] Update state file with published article ids"
           reviewers: ${{ github.actor }}
-          token: "${{ GITHUB_CREDENTIALS }}"
+          token: "${{ secrets.GH_TOKEN }}"
           base: master
           branch: "ci/state-file-update
 
