@@ -1,7 +1,7 @@
 ---
 published: false
 title: 'Typography'
-cover_image: 'https://raw.githubusercontent.com/thenem/blog-posts/master/content/assets/typography.jpg'
+cover_image: 'https://raw.githubusercontent.com/thenem/blog-posts/master/content/typography/assets/typography.jpg'
 description: 'This is a dummy post with typography'
 tags: productivity, beginners, test
 series:
