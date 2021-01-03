@@ -22,6 +22,10 @@ jobs:
       - name: Run Embedme
         run: yarn run embedme:check
 
-      - name: Deploy to dev.to
-        run: DEV_TO_GIT_TOKEN=${{ secrets.DEV_TO_GIT_TOKEN }} yarn run dev-to-git
+      - name: Publish to Dev.to
+        uses: muncus/devto-publish-action@release/v1
+        with:
+        directory: "$GITHUB_WORKSPACE/blog-posts/"
+        api-key: "${{ secrets.DEVTO_TOKEN }}"
+        state-file: "$GITHUB_WORKSPACE/ids.json"
 
