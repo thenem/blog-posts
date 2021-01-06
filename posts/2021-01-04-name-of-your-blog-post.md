@@ -7,6 +7,7 @@ series:
 canonical_url:
 ---
 
+T
 This is an example of how to structure a blog post.
 
 The thing above delimited by `---` is called a "front matter" and it allows us to keep control over our article in a very easy way. Just edit it with your own data and CI will handle the rest to publish it to dev.to!
