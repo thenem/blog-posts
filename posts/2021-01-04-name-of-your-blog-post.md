@@ -5,6 +5,7 @@ description: 'Description of the article'
 tags: tag1, tag2, tag3
 series:
 canonical_url:
+category: 'Testing'
 ---
 
 T
