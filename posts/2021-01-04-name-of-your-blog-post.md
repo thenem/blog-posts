@@ -2,6 +2,7 @@
 published: false
 title: 'Your title'
 description: 'Description of the article'
+cover_image: 'https://source.unsplash.com/WLUHO9A_xik/1600x900'
 tags: tag1, tag2, tag3
 series:
 canonical_url:
