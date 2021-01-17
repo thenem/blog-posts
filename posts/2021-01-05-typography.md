@@ -1,7 +1,7 @@
 ---
 published: false
 title: 'Typography'
-cover_image: 'https://source.unsplash.com/GkinCd2enIY'
+cover_image: 'https://images.unsplash.com/photo-1461958508236-9a742665a0d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080'
 description: 'This is a dummy post with typography'
 tags: productivity, beginners, test
 series:
