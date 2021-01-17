@@ -17,7 +17,7 @@ The thing above delimited by `---` is called a "front matter" and it allows us t
 You can also take advantage of [embedme](https://github.com/zakhenry/embedme) to extract your code from the markdown file and make sure that what you're displaying in the markdown is always up to date too e.g.
 
 ```ts
-// code/demo-code.ts
+// https://raw.githubusercontent.com/thenem/blog-posts/master/posts/code/demo-code.ts
 
 interface A {
   hello: string;

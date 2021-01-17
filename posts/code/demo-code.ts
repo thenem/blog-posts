@@ -1,3 +1,3 @@
 interface A {
-  hello: string;
+  helloFromCode: string;
 }
