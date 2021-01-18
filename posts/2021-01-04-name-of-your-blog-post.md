@@ -3,13 +3,14 @@ published: false
 title: 'Your title'
 description: 'Description of the article'
 cover_image: 'https://images.unsplash.com/uploads/141310026617203b5980d/c86b8baa?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1600&h=900&fit=crop'
-tags: tag1, tag2, tag3
+tags: -tag1
+  -tag2
+  -tag3
 series:
 canonical_url:
 category: 'Testing'
 ---
 
-T
 This is an example of how to structure a blog post.
 
 The thing above delimited by `---` is called a "front matter" and it allows us to keep control over our article in a very easy way. Just edit it with your own data and CI will handle the rest to publish it to dev.to!
@@ -17,8 +18,6 @@ The thing above delimited by `---` is called a "front matter" and it allows us t
 You can also take advantage of [embedme](https://github.com/zakhenry/embedme) to extract your code from the markdown file and make sure that what you're displaying in the markdown is always up to date too e.g.
 
 ```ts
-// https://raw.githubusercontent.com/thenem/blog-posts/master/posts/code/demo-code.ts
-
 interface A {
   hello: string;
 }
